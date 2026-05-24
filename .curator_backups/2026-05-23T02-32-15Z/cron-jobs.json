@@ -1,0 +1,163 @@
+{
+  "jobs": [
+    {
+      "id": "35d9ba31bc9a",
+      "name": "hermes-skills-backup-to-obsidian",
+      "prompt": "Backup Hermes Agent skills to Obsidian vault daily at midnight.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "backup_skills_to_obsidian.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "display": "0 0 * * *"
+      },
+      "schedule_display": "0 0 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 15
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-09T10:11:02.043103+00:00",
+      "next_run_at": "2026-05-24T00:00:00+00:00",
+      "last_run_at": "2026-05-23T00:00:10.202893+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "2463d2eeca4c",
+      "name": "hermes-full-backup",
+      "prompt": "Full backup of Hermes Agent",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "backup_hermes.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "display": "0 23 * * *"
+      },
+      "schedule_display": "0 23 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 14
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-09T10:17:02.452740+00:00",
+      "next_run_at": "2026-05-23T23:00:00+00:00",
+      "last_run_at": "2026-05-22T23:01:02.705385+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "54b81605031c",
+      "name": "backup_skills_to_obsidian.sh",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "backup_skills_to_obsidian.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 8
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-13T09:08:39.183881+00:00",
+      "next_run_at": "2026-05-23T09:00:00+00:00",
+      "last_run_at": "2026-05-22T09:01:13.911660+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:826307909",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "826307909",
+        "chat_name": "Barxhe1209",
+        "thread_id": "99146"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "1084be98a933",
+      "name": "Gateway \u91cd\u542f\u76d1\u63a7",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "gateway-watchdog.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 2,
+        "display": "every 2m"
+      },
+      "schedule_display": "every 2m",
+      "repeat": {
+        "times": null,
+        "completed": 5659
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-13T16:46:21.859419+00:00",
+      "next_run_at": "2026-05-23T02:33:15.042671+00:00",
+      "last_run_at": "2026-05-23T02:31:15.042671+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "826307909",
+        "chat_name": "Barxhe1209",
+        "thread_id": "99140"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-05-23T02:31:15.042985+00:00"
+}

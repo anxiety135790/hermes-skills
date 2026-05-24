@@ -1,0 +1,5 @@
+# gitignore for hermes-skills backup
+*~
+.DS_Store
+**/node_modules/**
+**/.DS_Store
