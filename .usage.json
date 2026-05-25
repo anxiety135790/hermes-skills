@@ -107,14 +107,14 @@
     "archived_at": null,
     "created_at": "2026-05-09T01:31:27.323620+00:00",
     "created_by": null,
-    "last_patched_at": "2026-05-13T09:08:08.442560+00:00",
-    "last_used_at": "2026-05-16T01:54:38.903930+00:00",
-    "last_viewed_at": "2026-05-16T01:54:38.899835+00:00",
-    "patch_count": 5,
+    "last_patched_at": "2026-05-24T14:31:26.656890+00:00",
+    "last_used_at": "2026-05-24T14:31:02.910587+00:00",
+    "last_viewed_at": "2026-05-24T14:31:02.853938+00:00",
+    "patch_count": 6,
     "pinned": false,
     "state": "active",
-    "use_count": 7,
-    "view_count": 7
+    "use_count": 8,
+    "view_count": 8
   },
   "telegram-group-mention-only": {
     "archived_at": null,

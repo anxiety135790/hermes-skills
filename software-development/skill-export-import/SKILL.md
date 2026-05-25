@@ -243,7 +243,79 @@ ls ~/.hermes/skills/messaging/telegram-group-mention-only
 ls ~/.hermes/skills/security/command-access-control
 ```
 
-## 每日定时备份到 Obsidian
+### 每日定时备份到 GitHub（git 同步）
+
+将 Hermes skills 目录设为 git 仓库并每日自动推送至 GitHub，实现异地备份。
+
+### 先决条件
+- GitHub Personal Access Token（Classic，需 `repo` 权限）
+- git 已安装
+
+### 设置步骤
+
+1. **在 GitHub 上创建仓库**（通过 API 或手动）：
+   ```bash
+   curl -s -X POST \
+     -H "Authorization: token $GITHUB_TOKEN" \
+     https://api.github.com/user/repos \
+     -d '{"name":"hermes-skills","description":"Hermes Agent skills backup","private":false}'
+   ```
+
+2. **初始化 skills 目录为 git 仓库**：
+   ```bash
+   cd ~/.hermes/skills
+   git init
+   git checkout -b main
+   ```
+
+3. **添加 `.gitignore`**（跳过临时文件）：
+   ```text
+   *~
+   .DS_Store
+   **/node_modules/**
+   **/.DS_Store
+   ```
+
+4. **设置远程仓库并保存认证**：
+   ```bash
+   git remote add origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/hermes-skills.git
+   git config credential.helper store
+   echo "https://$GITHUB_USER:$GITHUB_TOKEN@github.com" > ~/.git-credentials
+   chmod 600 ~/.git-credentials
+   git add -A
+   git commit -m "🎉 Initial commit: all Hermes skills"
+   git push -u origin main
+   ```
+
+5. **创建同步脚本** `~/.hermes/scripts/sync-skills.sh`：
+   ```bash
+   #!/bin/bash
+   set -e
+   cd "$HOME/.hermes/skills"
+   if git diff --quiet && git diff --cached --quiet; then
+       echo "✅ 没有变更，跳过提交"
+       exit 0
+   fi
+   TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+   git add -A
+   git commit -m "🔄 Auto-sync skills ($TIMESTAMP)"
+   git push origin main
+   echo "✅ Skills 同步完成: $TIMESTAMP"
+   ```
+   然后 `chmod +x ~/.hermes/scripts/sync-skills.sh`
+
+6. **设置每日 cronjob**（推荐凌晨 3:00）：
+   ```bash
+   # cronjob(action='create', prompt='', script='sync-skills.sh', schedule='0 3 * * *', no_agent=True)
+   ```
+
+### 陷阱
+- **一次性提供所有信息**：用户可能无法一次性提供 GitHub 用户名、仓库名、token。应逐步索取：先问用户名 → 再问仓库方案（新建/已有） → 最后要 token。
+- **Token 安全性**：`~/.git-credentials` 是明文存储，权限设为 `chmod 600`。首次推送后建议更新 remote URL 去除 token：`git remote set-url origin https://github.com/$USER/$REPO.git`，credential store 会接管后续认证。
+
+---
+
+### 每日定时备份到 Obsidian
 
 ### 备份目标
 - **Obsidian Vault 路径**: `~/Obsidian/Ideaverse Pro 2.5/YOLO/skills/hermes/`
