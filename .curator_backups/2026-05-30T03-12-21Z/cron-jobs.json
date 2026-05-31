@@ -1,0 +1,135 @@
+{
+  "jobs": [
+    {
+      "id": "1084be98a933",
+      "name": "Gateway \u91cd\u542f\u76d1\u63a7",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "gateway-watchdog.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 2,
+        "display": "every 2m"
+      },
+      "schedule_display": "every 2m",
+      "repeat": {
+        "times": null,
+        "completed": 10588
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-13T16:46:21.859419+00:00",
+      "next_run_at": "2026-05-30T03:13:20.997094+00:00",
+      "last_run_at": "2026-05-30T03:11:20.997094+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "826307909",
+        "chat_name": "Barxhe1209",
+        "thread_id": "99140"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "a7c77dcf8fee",
+      "name": "daily-skills-sync",
+      "prompt": "\u6267\u884c skills \u540c\u6b65\u811a\u672c ~/.hermes/scripts/sync-skills.sh\uff0c\u5c06 ~/.hermes/skills \u76ee\u5f55\u7684\u53d8\u66f4\u81ea\u52a8 commit \u5e76 push \u5230 GitHub\u3002",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "sync-skills.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1 * * *",
+        "display": "0 1 * * *"
+      },
+      "schedule_display": "0 1 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-24T14:31:22.761450+00:00",
+      "next_run_at": "2026-05-31T01:00:00+00:00",
+      "last_run_at": "2026-05-30T01:00:06.382398+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "826307909",
+        "chat_name": "Barxhe1209",
+        "thread_id": "100631"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    },
+    {
+      "id": "4de66f9bf179",
+      "name": "GitHub \u540c\u6b65\u7ed3\u679c\u63a8\u9001",
+      "prompt": "\u8bf7\u5c06 GitHub skills \u540c\u6b65\u4efb\u52a1\uff08daily-skills-sync\uff09\u7684\u8fd0\u884c\u7ed3\u679c\u6574\u7406\u6210\u7b80\u6d01\u7684\u6d88\u606f\u63a8\u9001\u3002\u8bf4\u660e\uff1a\u540c\u6b65\u662f\u5426\u6210\u529f\u3001\u63d0\u4ea4\u4e86\u4ec0\u4e48\u5185\u5bb9\u3001\u6709\u65e0\u53d8\u66f4\u7b49\u3002\u7528\u4e2d\u6587\u56de\u7b54\u3002",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": [
+        "a7c77dcf8fee"
+      ],
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 1 * * *",
+        "display": "5 1 * * *"
+      },
+      "schedule_display": "5 1 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-24T15:40:29.123377+00:00",
+      "next_run_at": "2026-05-31T01:05:00+00:00",
+      "last_run_at": "2026-05-30T01:05:13.376217+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "826307909",
+        "chat_name": "Barxhe1209",
+        "thread_id": "100676"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    }
+  ],
+  "updated_at": "2026-05-30T03:11:20.997396+00:00"
+}
