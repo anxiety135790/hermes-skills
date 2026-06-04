@@ -69,13 +69,13 @@
     "created_at": "2026-06-03T18:30:15.556915+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-03T18:36:56.439839+00:00",
-    "last_viewed_at": "2026-06-03T18:36:56.433187+00:00",
+    "last_used_at": "2026-06-04T15:51:13.951379+00:00",
+    "last_viewed_at": "2026-06-04T15:51:13.946216+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 5,
+    "view_count": 5
   },
   "hermes-config-yaml": {
     "archived_at": null,
